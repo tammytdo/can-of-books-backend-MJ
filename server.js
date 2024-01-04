@@ -15,4 +15,8 @@ app.get('/test', (request, response) => {
 
 })
 
+app.get('/books', (request, response) => {
+  response.send('Spiderman Marvel')
+})
+
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
