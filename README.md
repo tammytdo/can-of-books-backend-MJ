@@ -1,6 +1,6 @@
 # Start your own "Can of Books" App
 
-This repository has starter code to begin work on creating your own online bookshelf.
+An interactive web application designed to catalog your beloved books. The data of the books will be saved in the database and users can get data later from libraries.
 
 ## What can books do?
 
