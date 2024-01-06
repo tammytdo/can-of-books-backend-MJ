@@ -18,8 +18,9 @@ app.get('/test', (request, response) => {
 })
 
 app.get('/books', async (request, response) => {
-  const bookData = await Book.find({});
-  response.status(200).send(bookData)
+
+  const bookData = await Book.find();
+  response.status(200).json(bookData)
 
 })
 
