@@ -19,25 +19,21 @@ app.get('/test', (request, response) => {
 
 app.get('/books', async (request, response) => {
 
-  const bookData = await Book.find();
+  const bookData = await Book.find({});
   response.status(200).json(bookData)
 
 })
 
 app.delete('/books/:id', async (request, response) => {
   const bookId = request.params.id;
-
-  try {
-    const deletedBook = await Book.findByIdAndRemove(bookId);
-
-    if (!deletedBook) {
-      return response.status(404).json({error: 'Book not found'});
-    }
+  console.log('bookID', bookId)
+  // try {
+    await Book.findByIdAndDelete(bookId);
 
     response.status(200).json({ message: 'Book deleted successfully'})
-  } catch (error) {
-    response.status(500).json({ error: 'Internal server error'});
-  }
+  // } catch (error) {
+  //   response.status(500).json({ error: 'Internal server error'});
+  // }
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
