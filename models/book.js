@@ -18,8 +18,8 @@ const { Schema } = mongoose;
   
 // }); 
 
-const bookSchema = new mongoose.Schema({
-  title: String,
+const bookSchema = new Schema({
+    title: String,
   description: String,
   status: String,
   
